@@ -1,3 +1,149 @@
-body { font-family: system-ui, sans-serif; text-align: center; padding-top: 20vh; }
-#valor { font-size: 6rem; margin: 0 0 1rem; }
-button { font-size: 2rem; width: 4rem; height: 4rem; }
+:root {
+  --escritorio: #008080;
+  --gris: #c0c0c0;
+  --gris-claro: #dfdfdf;
+  --gris-oscuro: #808080;
+  --blanco: #ffffff;
+  --negro: #0a0a0a;
+  --azul: #000080;
+  --azul-claro: #1084d0;
+
+  --relieve:
+    inset -1px -1px var(--negro),
+    inset 1px 1px var(--blanco),
+    inset -2px -2px var(--gris-oscuro),
+    inset 2px 2px var(--gris-claro);
+  --hundido:
+    inset -1px -1px var(--blanco),
+    inset 1px 1px var(--gris-oscuro),
+    inset -2px -2px var(--gris-claro),
+    inset 2px 2px var(--negro);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--escritorio);
+  font-family: Tahoma, "MS Sans Serif", Verdana, sans-serif;
+  font-size: 14px;
+  color: var(--negro);
+}
+
+.ventana {
+  padding: 3px;
+  background: var(--gris);
+  box-shadow: var(--relieve), 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+
+.barra-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 4px 3px 6px;
+  color: var(--blanco);
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--azul), var(--azul-claro));
+}
+
+.cerrar {
+  display: grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.2rem;
+  color: var(--negro);
+  font-size: 1rem;
+  line-height: 1;
+  background: var(--gris);
+  box-shadow: var(--relieve);
+}
+
+.cuerpo { padding: 12px; }
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.contador {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 12rem;
+  height: 12rem;
+}
+
+.etiqueta {
+  padding: 3px;
+  text-align: center;
+  background: var(--gris);
+  box-shadow: var(--relieve);
+}
+
+#valor {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 5rem;
+  font-weight: bold;
+  background: var(--blanco);
+  box-shadow: var(--hundido);
+}
+
+.visor {
+  display: grid;
+  place-items: center;
+  width: 12rem;
+  height: 12rem;
+  overflow: hidden;
+  background: var(--blanco);
+  box-shadow: var(--hundido);
+}
+
+.visor img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.visor .espacio {
+  padding: 0.5rem;
+  color: var(--gris-oscuro);
+  text-align: center;
+}
+.botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+button {
+  height: 2.6rem;
+  padding: 0;
+  color: var(--negro);
+  font: bold 1.6rem Tahoma, "MS Sans Serif", Verdana, sans-serif;
+  background: var(--gris);
+  border: 0;
+  cursor: pointer;
+  box-shadow: var(--relieve);
+}
+
+button:active {
+  padding: 2px 0 0 2px;
+  box-shadow: var(--hundido);
+}
+
+button:focus-visible {
+  outline: 1px dotted var(--negro);
+  outline-offset: -6px;
+}

@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contador</title>
-  
-  <link rel="stylesheet" href="./src/style/contador.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contador</title>
+<link rel="stylesheet" href="./src/style/contador.css">
 </head>
 <body>
-  <p id="valor">0</p>
-  <button id="restar" aria-label="Restar 1">&minus;</button>
-  <button id="sumar" aria-label="Sumar 1">+</button>
+  <main class="ventana">
+    <div class="barra-titulo">
+      <span>Contador.exe</span>
+      <span class="cerrar" aria-hidden="true">&times;</span>
+    </div>
+
+    <div class="cuerpo">
+      <div class="fila">
+        <div class="contador">
+          <div class="etiqueta">Cuenta</div>
+          <p id="valor">0</p>
+        </div>
+
+        <div class="visor">
+               <img src="./src/media/clippy.gif" alt=""> 
+        </div>
+      </div>
+
+      <div class="botones">
+        <button id="restar" aria-label="Restar 1">&minus;</button>
+        <button id="sumar" aria-label="Sumar 1">+</button>
+      </div>
+    </div>
+  </main>
   <script src="./src/log/contador.js"></script>
 </body>
 </html>
